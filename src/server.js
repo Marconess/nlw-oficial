@@ -70,7 +70,7 @@ const proffys = [
  }
  
  function pageGiveClasses(req, res) { 
-     const dados = rea.query
+    
  //adicionar dados a lista de proffys
   
  
