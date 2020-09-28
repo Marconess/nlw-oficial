@@ -6,8 +6,7 @@
     <title>Proffy | sua Plataforma de estudos online</title>
 
     
-    
-        
+       
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/partials/header.css">
     <link rel="stylesheet" href="/styles/partials/forms.css">
@@ -65,6 +64,11 @@
         
         <main>
 
+            {% if proffys == ""%}
+                <p class="no-results"> Nenhum professor encontrado  com a sua pesquisa</p>
+
+            {% else %}
+
             {%for proffy in proffys %}
                 <article class="teacher-item">
                 <header>
@@ -85,10 +89,12 @@
                     <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{proffy .whatsapp}}&text=Tenho interesse na sua aula de {{proffy .subject}} {{teacher.name}}"
                     class="button" target="_blank">
                         <img src="/images/icons/whatsapp.svg" alt="whatsapp">Entre em contato
-                    </a>
+                    </a>  
                 </footer>
                 </article>
             {%endfor%}
+
+            {% endif %}
 
              
          
